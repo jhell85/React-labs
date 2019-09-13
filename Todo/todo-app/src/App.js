@@ -17,9 +17,9 @@ const List = () => {
     setItems([...items, text]);
     setText("");
   }
-  const removeItem = (event) => {
-    event.preventDefault();
-
+  const removeItem = (index) => {
+    setItems(index)
+    items.filter()
   }
 
   return (
@@ -34,7 +34,10 @@ const List = () => {
     </form>
     <ul>
       {items.map((item, index) => (
-        <li key={index}>{item}</li>     
+        <li key={index}>
+          {item}
+          <button onClick={() => removeItem(index)}>Delete</button>
+        </li>     
       ))}
     </ul>
   </div>
